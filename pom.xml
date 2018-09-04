@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.cornell.ncrn.ced2ar</groupId>
+    <artifactId>ced2ar3-services-core-parent</artifactId>
+    <version>${ced2ar.version}</version>
+    
+    <modules>
+        <module>services-core</module>
+        <module>services-core-tests</module>
+    </modules>
+    <packaging>pom</packaging>
+    
+    <name>CED2AR 3</name>
+    <description>
+      Comprehensive Extensible Data Documentation and
+      Access Repository (AAR) was designed to improve the documentation and
+      discoverability of both public and restricted data. Version 3 is a
+      modular implementaiton of CED2AR.
+    </description>
+    
+    <licenses>
+      <license>
+	<name>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</name>
+	<url>https://raw.githubusercontent.com/ncrncornell/ced2ar-rdb/master/LICENSE</url>
+      </license>
+    </licenses>
+
+    <developers>
+      <developer>
+	<name>Brandon Barker</name>
+	<email>brandon.barker@cornell.edu</email>
+	<organization>Cornell University</organization>
+	<organizationUrl>https://www.cac.cornell.edu/barker/</organizationUrl>
+      </developer>
+      <developer>
+	<name>Lars Vilhuber</name>
+	<email>lars.vilhuber@cornell.edu</email>
+	<organization>Cornell University</organization>
+	<organizationUrl>https://www.ilr.cornell.edu/people/lars-vilhuber</organizationUrl>
+      </developer>
+      <developer>
+	<name>Charles C Simmer</name>
+	<email>ccs237@cornell.edu</email>
+	<organization>Cornell University</organization>
+	<organizationUrl>https://github.com/CSimmer</organizationUrl>
+      </developer>
+    </developers>
+
+    <scm>
+      <connection>scm:git:git://github.com:ncrncornell/ced2ar-rdb.git</connection>
+      <developerConnection>scm:git:ssh://github.com:ncrncornell/ced2ar-rdb.git</developerConnection>
+      <url>https://github.com/ncrncornell/ced2ar-rdb</url>
+    </scm>
+
+    <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>1.4.0.RELEASE</version>
+      <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <ced2ar.version>0.0.0</ced2ar.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+        <junit.gen5.version>5.0.0-ALPHA</junit.gen5.version>
+
+        <spring.boot.dependencies.scope>provided</spring.boot.dependencies.scope>
+	<scala.version.major>2.12</scala.version.major>
+        <scala.version.minor>4</scala.version.minor>
+        <scala.version>
+            ${scala.version.major}.${scala.version.minor}
+        </scala.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>intellij</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.boot.dependencies.scope>compile</spring.boot.dependencies.scope>
+            </properties>
+            <dependencies>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>build</id>
+            <dependencies>
+                <!-- see https://stackoverflow.com/questions/32531422/spring-boot-jsp-error-noclassdeffounderror/32540017#32540017 -->
+                <!-- see https://youtrack.jetbrains.com/issue/IDEA-107048 -->
+            </dependencies>
+        </profile>
+    </profiles>
+
+	<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>${spring.boot.dependencies.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>${spring.boot.dependencies.scope}</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+   			<groupId>javax.servlet</groupId>
+    		<artifactId>jstl</artifactId>
+    		<version>1.2</version>
+		</dependency>
+
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit5-api</artifactId>
+            <version>${junit.gen5.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit4-runner</artifactId>
+            <version>${junit.gen5.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit5-engine</artifactId>
+            <version>${junit.gen5.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-jersey</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+	</dependencies>
+    <distributionManagement>
+      <snapshotRepository>
+	<id>ossrh</id>
+	<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      </snapshotRepository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+	    <plugin>
+	      <groupId>org.sonatype.plugins</groupId>
+	      <artifactId>nexus-staging-maven-plugin</artifactId>
+	      <version>1.6.7</version>
+	      <extensions>true</extensions>
+	      <configuration>
+		<serverId>ossrh</serverId>
+		<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+		<autoReleaseAfterClose>true</autoReleaseAfterClose>
+	      </configuration>
+	    </plugin>
+	    <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-gpg-plugin</artifactId>
+	      <version>1.5</version>
+	      <executions>
+	        <execution>
+		  <id>sign-artifacts</id>
+		  <phase>verify</phase>
+		  <goals>
+		    <goal>sign</goal>
+		  </goals>
+		</execution>
+	      </executions>
+	    </plugin>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-source-plugin</artifactId>
+	      <version>2.2.1</version>
+	      <executions>
+		<execution>
+		  <id>attach-sources</id>
+		  <goals>
+		    <goal>jar-no-fork</goal>
+		  </goals>
+		</execution>
+	      </executions>
+	    </plugin>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-javadoc-plugin</artifactId>
+	      <version>2.9.1</version>
+	      <executions>
+		<execution>
+		  <id>attach-javadocs</id>
+		  <goals>
+		    <goal>jar</goal>
+		  </goals>
+		</execution>
+	      </executions>
+	    </plugin>
+	</plugins>
+    </build>
+
+</project>

@@ -1,4 +1,4 @@
-package edu.ncrn.cornell.service;
+package edu.cornell.ncrn.ced2ar.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,13 +11,13 @@ import java.util.stream.Stream;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
-import edu.ncrn.cornell.model.*;
-import edu.ncrn.cornell.model.dao.*;
-import edu.ncrn.cornell.util.DDIHandle;
+import edu.cornell.ncrn.ced2ar.model.*;
+import edu.cornell.ncrn.ced2ar.model.dao.*;
+import edu.cornell.ncrn.ced2ar.util.DDIHandle;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.ncrn.cornell.util.XMLHandle;
+import edu.cornell.ncrn.ced2ar.util.XMLHandle;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import scala.Tuple2;

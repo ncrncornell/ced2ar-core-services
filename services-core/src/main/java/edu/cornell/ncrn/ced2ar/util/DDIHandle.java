@@ -1,4 +1,4 @@
-package edu.ncrn.cornell.util;
+package edu.cornell.ncrn.ced2ar.util;
 
 /**
  * DDI-specific extensions for an XMLHandle

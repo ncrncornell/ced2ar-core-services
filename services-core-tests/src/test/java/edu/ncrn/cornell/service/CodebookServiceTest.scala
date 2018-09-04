@@ -1,8 +1,8 @@
-package edu.ncrn.cornell.service
+package edu.cornell.ncrn.ced2ar.service
 
 
-import edu.ncrn.cornell.model.{FieldInst, ProfileField, RawDoc}
-import edu.ncrn.cornell.model.dao._
+import edu.cornell.ncrn.ced2ar.model.{FieldInst, ProfileField, RawDoc}
+import edu.cornell.ncrn.ced2ar.model.dao._
 import org.junit.gen5.api.Test
 import org.junit.gen5.junit4.runner.JUnit5
 import org.junit.runner.RunWith
