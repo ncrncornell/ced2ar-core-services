@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.cornell.ncrn.ced2ar</groupId>
     <artifactId>ced2ar3-services-core-parent</artifactId>
-    <version>${ced2ar.version}</version>
+    <version>${revision}</version>
     
     <modules>
         <module>services-core</module>
@@ -62,8 +62,8 @@
     </parent>
 
     <properties>
-        <ced2ar.version>0.0.0</ced2ar.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <revision>0.0.0</revision>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
         <junit.gen5.version>5.0.0-ALPHA</junit.gen5.version>
 
@@ -196,6 +196,31 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>ossrh</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 	    <plugin>
 	      <groupId>org.sonatype.plugins</groupId>

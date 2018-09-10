@@ -10,12 +10,14 @@
     <parent>
         <artifactId>ced2ar3-services-core-parent</artifactId>
         <groupId>edu.cornell.ncrn.ced2ar</groupId>
-        <version>${ced2ar.version}</version>
+        <version>${revision}</version>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ced2ar3-services-core</artifactId>
+
+    <name>CED2AR 3</name>
 
     <packaging>jar</packaging>
 
@@ -23,7 +25,7 @@
         <dependency>
             <groupId>edu.cornell.ncrn.ced2ar</groupId>
             <artifactId>ced2ar3-rdb</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.3</version>
         </dependency>
 
         <dependency>
