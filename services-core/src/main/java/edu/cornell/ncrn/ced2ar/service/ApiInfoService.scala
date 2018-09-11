@@ -1,7 +1,7 @@
-package edu.ncrn.cornell.service
+package edu.cornell.ncrn.ced2ar.service
 
-import edu.ncrn.cornell.model._
-import edu.ncrn.cornell.model.dao._
+import edu.cornell.ncrn.ced2ar.model._
+import edu.cornell.ncrn.ced2ar.model.dao._
 import io.circe.syntax._
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.{Page, PageRequest, Pageable, Sort}

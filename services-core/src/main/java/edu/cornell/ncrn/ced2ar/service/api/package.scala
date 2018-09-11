@@ -1,4 +1,4 @@
-package edu.ncrn.cornell.service
+package edu.cornell.ncrn.ced2ar.service
 import scala.collection.immutable.ListMap
 
 

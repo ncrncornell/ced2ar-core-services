@@ -1,4 +1,4 @@
-package edu.ncrn.cornell.service;
+package edu.cornell.ncrn.ced2ar.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
@@ -9,24 +9,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import edu.ncrn.cornell.model.Field;
-import edu.ncrn.cornell.model.FieldIndice;
-import edu.ncrn.cornell.model.FieldInst;
-import edu.ncrn.cornell.model.Mapping;
-import edu.ncrn.cornell.model.Profile;
-import edu.ncrn.cornell.model.ProfileField;
-import edu.ncrn.cornell.model.RawDoc;
-import edu.ncrn.cornell.model.dao.FieldDao;
-import edu.ncrn.cornell.model.dao.FieldIndiceDao;
-import edu.ncrn.cornell.model.dao.FieldInstDao;
-import edu.ncrn.cornell.model.dao.MappingDao;
-import edu.ncrn.cornell.model.dao.ProfileDao;
-import edu.ncrn.cornell.model.dao.ProfileFieldDao;
-import edu.ncrn.cornell.model.dao.RawDocDao;
-import edu.ncrn.cornell.model.dao.SchemaDao;
-import edu.ncrn.cornell.model.Schema;
-import edu.ncrn.cornell.model.SchemaPK;
-import edu.ncrn.cornell.util.XMLHandle;
+import edu.cornell.ncrn.ced2ar.model.Field;
+import edu.cornell.ncrn.ced2ar.model.FieldIndice;
+import edu.cornell.ncrn.ced2ar.model.FieldInst;
+import edu.cornell.ncrn.ced2ar.model.Mapping;
+import edu.cornell.ncrn.ced2ar.model.Profile;
+import edu.cornell.ncrn.ced2ar.model.ProfileField;
+import edu.cornell.ncrn.ced2ar.model.RawDoc;
+import edu.cornell.ncrn.ced2ar.model.dao.FieldDao;
+import edu.cornell.ncrn.ced2ar.model.dao.FieldIndiceDao;
+import edu.cornell.ncrn.ced2ar.model.dao.FieldInstDao;
+import edu.cornell.ncrn.ced2ar.model.dao.MappingDao;
+import edu.cornell.ncrn.ced2ar.model.dao.ProfileDao;
+import edu.cornell.ncrn.ced2ar.model.dao.ProfileFieldDao;
+import edu.cornell.ncrn.ced2ar.model.dao.RawDocDao;
+import edu.cornell.ncrn.ced2ar.model.dao.SchemaDao;
+import edu.cornell.ncrn.ced2ar.model.Schema;
+import edu.cornell.ncrn.ced2ar.model.SchemaPK;
+import edu.cornell.ncrn.ced2ar.util.XMLHandle;
 import org.springframework.stereotype.Service;
 
 /**

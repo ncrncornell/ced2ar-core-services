@@ -1,8 +1,8 @@
-package edu.ncrn.cornell.service
+package edu.cornell.ncrn.ced2ar.service
 
 import java.util
 
-import edu.ncrn.cornell.service.api._
+import edu.cornell.ncrn.ced2ar.service.api._
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

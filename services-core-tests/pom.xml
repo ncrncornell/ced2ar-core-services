@@ -3,15 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ced2ar3</artifactId>
-        <groupId>edu.ncrn.cornell</groupId>
-        <version>${ced2ar.version}</version>
+        <artifactId>ced2ar3-services-core-parent</artifactId>
+        <groupId>edu.cornell.ncrn.ced2ar</groupId>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ced2ar3-services-core-tests</artifactId>
-    <packaging>jar</packaging>
 
+    <name>CED2AR 3</name>
+
+    <packaging>jar</packaging>
 
     <properties>
         <dbunit.version>2.5.2</dbunit.version>
@@ -46,7 +48,7 @@
         </dependency>
 
         <dependency>
-            <groupId>edu.ncrn.cornell</groupId>
+            <groupId>edu.cornell.ncrn.ced2ar</groupId>
             <artifactId>ced2ar3-services-core</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -107,6 +109,23 @@
                         <goals>
                             <goal>verify</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>empty-javadoc-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>javadoc</classifier>
+                            <classesDirectory>${basedir}/javadoc</classesDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

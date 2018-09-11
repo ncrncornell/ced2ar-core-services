@@ -8,22 +8,24 @@
     </properties>
 
     <parent>
-        <artifactId>ced2ar3</artifactId>
-        <groupId>edu.ncrn.cornell</groupId>
-        <version>${ced2ar.version}</version>
+        <artifactId>ced2ar3-services-core-parent</artifactId>
+        <groupId>edu.cornell.ncrn.ced2ar</groupId>
+        <version>${revision}</version>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ced2ar3-services-core</artifactId>
 
+    <name>CED2AR 3</name>
+
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>edu.ncrn.cornell</groupId>
+            <groupId>edu.cornell.ncrn.ced2ar</groupId>
             <artifactId>ced2ar3-rdb</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.3</version>
         </dependency>
 
         <dependency>
@@ -54,7 +56,16 @@
             <version>2.0.2-beta</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
 
     </dependencies>
 

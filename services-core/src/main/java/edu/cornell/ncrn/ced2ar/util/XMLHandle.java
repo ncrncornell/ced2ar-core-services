@@ -1,4 +1,4 @@
-package edu.ncrn.cornell.util;
+package edu.cornell.ncrn.ced2ar.util;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;

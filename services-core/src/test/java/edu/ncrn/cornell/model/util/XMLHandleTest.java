@@ -1,10 +1,10 @@
-package edu.ncrn.cornell.model.util;
+package edu.cornell.ncrn.ced2ar.model.util;
 
 
 import com.google.common.base.Charsets;
 import com.google.common.io.CharStreams;
-import edu.ncrn.cornell.model.Schema;
-import edu.ncrn.cornell.util.XMLHandle;
+import edu.cornell.ncrn.ced2ar.model.Schema;
+import edu.cornell.ncrn.ced2ar.util.XMLHandle;
 import org.junit.gen5.api.AfterEach;
 import org.junit.gen5.api.BeforeAll;
 import org.junit.gen5.api.BeforeEach;

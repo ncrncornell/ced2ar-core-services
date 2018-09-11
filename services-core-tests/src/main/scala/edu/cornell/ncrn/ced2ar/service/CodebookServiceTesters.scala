@@ -1,6 +1,6 @@
-package edu.ncrn.cornell.service
+package edu.cornell.ncrn.ced2ar.service
 
-import edu.ncrn.cornell.service.JsonComparison._
+import edu.cornell.ncrn.ced2ar.service.JsonComparison._
 import io.circe.Json.JArray
 import org.junit.gen5.api.Assertions._
 import org.junit.gen5.api.AfterEach
